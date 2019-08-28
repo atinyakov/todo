@@ -2,24 +2,7 @@ import React from 'react';
 import './todo-list-item.css';
 
 const TodoListItem = (props)  => {
-    const { label, done, important, onToggleImportant, onToggleDone } = props;
-
-  // state = {
-  //   done: false,
-  //   important: false
-  // }
-
-  // onLabelClick = () => {
-  //     this.setState(state => ({done:!state.done}))
-  // }
-
-  // onMarkImportant = () => {
-  //     this.setState(state => ({important: !state.important}))
-  // }
-
-  // render(){
-
-    // const { done, important} = this.state
+    const { label, done, important, onToggleImportant, onToggleDone, onDeleted } = props;
 
     let classNames = 'todo-list-item'
     if(done) {
@@ -46,6 +29,7 @@ const TodoListItem = (props)  => {
 
         <button type="button"
                 className="btn btn-outline-danger btn-sm float-right"
+                onClick = {onDeleted}
                 >
           <i className="fa fa-trash-o" />
         </button>
